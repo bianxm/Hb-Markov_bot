@@ -35,15 +35,15 @@ async def on_message(message):
             for filename in os.listdir('./texts'):
                 messageToSend += f'{filename}     '
         elif tokens[1] == 'set':
-            #try:
-            if os.path.isfile('./texts/' + tokens[2]):
-                chains = markov.make_chains(markov.open_and_read_file([f'./texts/{tokens[2]}']))
-                #new_chains(f'./texts/{tokens[2]}')
-                messageToSend = f"Thanks! Source text is now {tokens[2]}"
-            else:
-                messageToSend = f"Sorry, {tokens[2]} not found. Please call '$mb get' to see available texts."
-            # except:
-                # messageToSend = f"Proper syntax: '$mb set <filename here>' /n'$mb get' to see available texts"
+            try:
+                if os.path.isfile('./texts/' + tokens[2]):
+                    chains = markov.make_chains(markov.open_and_read_file([f'./texts/{tokens[2]}']))
+                    #new_chains(f'./texts/{tokens[2]}')
+                    messageToSend = f"Thanks! Source text is now {tokens[2]}"
+                else:
+                    messageToSend = f"Sorry, {tokens[2]} not found. Please call '$mb get' to see available texts."
+            except:
+                messageToSend = f"Proper syntax: '$mb set <filename here>' \n'$mb get' to see available texts"
         else:
            messageToSend = "Sorry, I don't understand that" 
         
