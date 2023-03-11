@@ -5,6 +5,8 @@ Available commands:
 * '$mb hello' : Generates some text
 * '$mb get' : See available base texts to generate from
 * '$mb set <filename>' : Set text to generate from
+* '$mb length <number from 5-100>' : Set maximum length (number of words) of generated text
+* '$mb check <length or file>' : Check current settings
 * '$mb help' : Basically show the same info as above
 ## Run your own
 1. Clone this repo and install everything in requirements.txt
