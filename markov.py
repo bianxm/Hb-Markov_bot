@@ -55,16 +55,16 @@ def make_text(chains):
     return ' '.join(words)
 
 
-# Get the filenames from the user through a command line prompt, ex:
-# python markov.py green-eggs.txt shakespeare.txt
-# filenames = sys.argv[1:]
+if __name__=='main':
+    # Get the filenames from the user through a command line prompt, ex:
+    # python markov.py green-eggs.txt shakespeare.txt
+    # filenames = sys.argv[1:]
+    if not filenames:
+        print("Please provide a filename on the command line! Ex. python3 markov.py green-eggs.txt")
+        exit(1)
 
-# if not filenames:
-    # print("Please provide a filename on the command line! Ex. python3 markov.py green-eggs.txt")
-    # exit(1)
+    # Open the files and turn them into one long string
+    text = open_and_read_file(filenames)
 
-# # Open the files and turn them into one long string
-# text = open_and_read_file(filenames)
-
-# # Get a Markov chain
-# chains = make_chains(text)
+    # Get a Markov chain
+    chains = make_chains(text)
