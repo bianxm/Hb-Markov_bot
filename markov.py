@@ -34,14 +34,14 @@ def make_chains(text_string):
     return chains
 
 
-def make_text(chains):
+def make_text(chains, numTokens):
     """Take dictionary of Markov chains; return random text."""
 
     keys = list(chains.keys())
     key = choice(keys)
 
     words = [key[0], key[1]]
-    while len(words)<20:
+    while len(words)<numTokens:
         # Keep looping until we have a key that isn't in the chains
         # (which would mean it was the end of our original text).
 
