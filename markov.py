@@ -41,7 +41,7 @@ def make_text(chains):
     key = choice(keys)
 
     words = [key[0], key[1]]
-    while key in chains:
+    while len(words)<20:
         # Keep looping until we have a key that isn't in the chains
         # (which would mean it was the end of our original text).
 
